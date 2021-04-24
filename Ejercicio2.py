@@ -1,6 +1,6 @@
-Lista_Notas = []
-suma_Notas = 0
-Prom = 0
+lista_notas = []
+suma_notas = 0
+prom = 0
 
 print()
 
@@ -21,9 +21,27 @@ while True:
             cantidad_notas = int(input(f"¿Cuantas notas tiene el alumno ?\n"))
 
             for nota in range(cantidad_notas):
-                not1 = float(input(f"Ingrese la nota {nota+1}: "))
+                nota = float(input(f"Nota {nota+1}: "))
 
+            
+                lista_notas.append(nota)
+            
         notas()
         break
     except (TypeError, ValueError) :
             print('Ocurrio un problema: El valor ingresado es incorrecto\nIngrese un dato correcto')
+
+for i in lista_notas:
+
+    suma_notas= suma_notas + i
+    prom = suma_notas / len(lista_notas)
+
+    nota_menor= min(lista_notas)
+    nota_mayor =max(lista_notas)
+
+print("-------------Lista de Notas---------------------")
+print(lista_notas)
+print()
+print(f'El promedio es: {prom}')
+print(f"'Nota mayor: {nota_mayor}'")
+print(f"'Nota menor: {nota_menor}'")
